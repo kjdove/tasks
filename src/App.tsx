@@ -12,7 +12,6 @@ function App(): React.JSX.Element {
                 automatically reload.
             </p>
             <p>Kacey Dove</p>
-            <p>Hello World</p>
         </div>
     );
 }
