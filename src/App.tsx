@@ -53,14 +53,12 @@ function App(): React.JSX.Element {
                         Log Hello World
                     </Button>
                 </p>
-                <p>
-                    List of My Favorite Things:
-                    <ol>
-                        <li>France</li>
-                        <li>Music</li>
-                        <li>Creativity</li>
-                    </ol>
-                </p>
+                List of My Favorite Things:
+                <ol>
+                    <li>France</li>
+                    <li>Music</li>
+                    <li>Creativity</li>
+                </ol>
             </div>
         </div>
     );
