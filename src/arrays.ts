@@ -4,6 +4,7 @@
  * an empty array. If there is one element, the resulting list should
  * the number twice.
  */
+//DONE
 export function bookEndList(numbers: number[]): number[] {
     let retArr: number[] = [];
     if (numbers.length === 0) {
@@ -22,6 +23,7 @@ export function bookEndList(numbers: number[]): number[] {
  * Consume an array of numbers, and return a new array where each
  * number has been tripled (multiplied by 3).
  */
+//DONE
 export function tripleNumbers(numbers: number[]): number[] {
     let retArr: number[] = numbers.map((num: number): number => num * 3);
     return retArr;
@@ -31,8 +33,12 @@ export function tripleNumbers(numbers: number[]): number[] {
  * Consume an array of strings and convert them to integers. If
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
+//DONE
 export function stringsToIntegers(numbers: string[]): number[] {
-    let retArr: number[] = numbers.map((str: string): number => Number(str));
+    let retArr: number[] = numbers.map((str: string): number =>
+        isNaN(Number(str)) ? 0 : Number(str),
+    );
+    console.log(retArr);
     return retArr;
 }
 
@@ -60,6 +66,7 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * Consumes an array of words and returns the number of words that are LESS THAN
  * 4 letters long.
  */
+//DONE
 export function countShortWords(words: string[]): number {
     let retArr: string[] = words.filter(
         (str: string): boolean => str.length < 4,
@@ -72,6 +79,7 @@ export function countShortWords(words: string[]): number {
  * the colors are either 'red', 'blue', or 'green'. If an empty list is given,
  * then return true.
  */
+//DONE
 export function allRGB(colors: string[]): boolean {
     if (colors.length === 0) {
         return true;
