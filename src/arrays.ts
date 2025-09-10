@@ -73,6 +73,15 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
+    if (colors.length === 0) {
+        return true;
+    }
+    let retColors: string[] = colors.filter(
+        (c: string): boolean => c === "red" || c === "blue" || c === "green",
+    );
+    if (retColors.length === colors.length) {
+        return true;
+    }
     return false;
 }
 
