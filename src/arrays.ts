@@ -38,7 +38,6 @@ export function stringsToIntegers(numbers: string[]): number[] {
     let retArr: number[] = numbers.map((str: string): number =>
         isNaN(Number(str)) ? 0 : Number(str),
     );
-    console.log(retArr);
     return retArr;
 }
 
