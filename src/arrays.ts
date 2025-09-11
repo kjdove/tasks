@@ -62,7 +62,6 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
         mess.charAt(mess.length - 1) === "!" ? mess.toUpperCase() : mess,
     );
     retArr = retArr.filter((ret: string): boolean => !ret.includes("?"));
-    console.log(retArr);
     return retArr;
 };
 
