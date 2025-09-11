@@ -48,6 +48,7 @@ export function stringsToIntegers(numbers: string[]): number[] {
  * convert it to 0 instead.
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
+//DONE
 export const removeDollars = (amounts: string[]): number[] => {
     let remDS: string[] = amounts.map((am: string): string =>
         am.includes("$") ? am.replace("$", "") : am,
@@ -63,6 +64,7 @@ export const removeDollars = (amounts: string[]): number[] => {
  * string that ends in "!" should be made uppercase. Also, remove any strings that end
  * in question marks ("?").
  */
+//DONE
 export const shoutIfExclaiming = (messages: string[]): string[] => {
     let retArr: string[] = messages.map((mess: string): string =>
         mess.charAt(mess.length - 1) === "!" ? mess.toUpperCase() : mess,
@@ -109,8 +111,17 @@ export function allRGB(colors: string[]): boolean {
  * For instance, the array [1, 2, 3] would become "6=1+2+3".
  * And the array [] would become "0=0".
  */
+//DONE
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0=0";
+    }
+
+    //let sum: string = addends.reduce((ct: number, num: number) => ct+num);
+    let sum: number = addends.reduce((ct: number, num: number) => ct + num);
+    let numStr: string = addends.join("+");
+
+    return sum + "=" + numStr;
 }
 
 /**
