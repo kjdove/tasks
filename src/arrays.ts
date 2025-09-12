@@ -133,6 +133,20 @@ export function makeMath(addends: number[]): string {
  * For instance, the array [1, 9, -5, 7] would become [1, 9, -5, 10, 7]
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
+//DONE
 export function injectPositive(values: number[]): number[] {
-    return [];
+    if (values.length === 0) {
+        return [0];
+    }
+
+    let ind: number = values.findIndex((n) => n < 0);
+
+    if (ind === -1) {
+        let sum: number = values.reduce((cv: number, n: number) => cv + n, 0);
+        return [...values, sum];
+    } else {
+        let retArr: number[] = values.slice(0, ind);
+        let sum: number = retArr.reduce((cv: number, n: number) => cv + n, 0);
+        return [...values.slice(0, ind + 1), sum, ...values.slice(ind + 1)];
+    }
 }
