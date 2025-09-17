@@ -63,8 +63,10 @@ export function isValid(question: Question, answer: string): boolean {
  * separated by ": ". So for example, the question with id 9 and the
  * name "My First Question" would become "9: My First Q".
  */
+//DONE
 export function toShortForm(question: Question): string {
-    return "";
+    let retStr: string = question.id + ": " + question.name.slice(0, 10);
+    return retStr;
 }
 
 /**
