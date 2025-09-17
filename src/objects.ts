@@ -112,8 +112,10 @@ export function toMarkdown(question: Question): string {
  * Return a new version of the given question, except the name should now be
  * `newName`.
  */
+//DONE
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    let retQues: Question = { ...question, name: newName };
+    return retQues;
 }
 
 /**
