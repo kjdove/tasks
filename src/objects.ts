@@ -123,8 +123,11 @@ export function renameQuestion(question: Question, newName: string): Question {
  * should be inverted. If the question was not published, now it should be
  * published; if it was published, now it should be not published.
  */
+//DONE
 export function publishQuestion(question: Question): Question {
-    return question;
+    let retQues: Question = { ...question, published: !question.published };
+
+    return retQues;
 }
 
 /**
