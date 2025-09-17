@@ -168,11 +168,22 @@ export function addOption(question: Question, newOption: string): Question {
  * Notice that the second Question is provided as just an object with a `points`
  * field; but the function call would be the same as if it were a `Question` type!
  */
+//DONE
 export function mergeQuestion(
     id: number,
     name: string,
     contentQuestion: Question,
     { points }: { points: number },
 ): Question {
-    return contentQuestion;
+    let retQues: Question = {
+        ...contentQuestion,
+        id: id,
+        name: name,
+        options: contentQuestion.options.slice(0, 3),
+        points: points,
+        published: false,
+    };
+    console.log(contentQuestion);
+    console.log(retQues);
+    return retQues;
 }
