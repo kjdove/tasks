@@ -154,7 +154,9 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * to the original question's list!
  * Check out the subsection about "Nested Fields" for more information.
  */
+//DONE
 export function addOption(question: Question, newOption: string): Question {
+    question.options = [...question.options, newOption];
     return question;
 }
 
