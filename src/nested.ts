@@ -31,10 +31,13 @@ export function getNonEmptyQuestions(questions: Question[]): Question[] {
  * Consumes an array of questions and returns the question with the given `id`. If the
  * question is not found, return `null` instead.
  */
+//DONE
 export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
+    const retQ = questions.find((q: Question): boolean => q.id === id);
+    if (retQ) return retQ;
     return null;
 }
 
