@@ -78,8 +78,14 @@ export function sumPoints(questions: Question[]): number {
 /***
  * Consumes an array of questions and returns the sum total of the PUBLISHED questions.
  */
+//DONE
 export function sumPublishedPoints(questions: Question[]): number {
-    return 0;
+    let sum: number = questions.reduce(
+        (current: number, q: Question) =>
+            q.published ? current + q.points : current + 0,
+        0,
+    );
+    return sum;
 }
 
 /***
