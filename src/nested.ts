@@ -151,7 +151,14 @@ export function publishAll(questions: Question[]): Question[] {
  * Consumes an array of Questions and produces whether or not all the questions
  * are the same type. They can be any type, as long as they are all the SAME type.
  */
+//DONE
 export function sameType(questions: Question[]): boolean {
+    let Arr: Question[] = questions.filter(
+        (q: Question): boolean => q.type === questions[0].type,
+    );
+    if (Arr.length === questions.length) {
+        return true;
+    }
     return false;
 }
 
