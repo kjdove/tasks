@@ -45,8 +45,12 @@ export function findQuestion(
  * Consumes an array of questions and returns a new array that does not contain the question
  * with the given `id`.
  */
+//DONE
 export function removeQuestion(questions: Question[], id: number): Question[] {
-    return [];
+    let retArr: Question[] = questions.filter(
+        (q: Question): boolean => !(q.id === id),
+    );
+    return retArr;
 }
 
 /***
