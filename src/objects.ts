@@ -183,7 +183,6 @@ export function mergeQuestion(
         points: points,
         published: false,
     };
-    console.log(contentQuestion);
-    console.log(retQues);
+
     return retQues;
 }
