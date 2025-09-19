@@ -114,7 +114,6 @@ export function toCSV(questions: Question[]): string {
                 `${q.id},${q.name},${q.options.length},${q.points},${q.published}`,
         )
         .join("\n");
-
     return "id,name,options,points,published\n" + retStr;
 }
 
@@ -185,12 +184,20 @@ export function addNewQuestion(
  * the Questions are the same EXCEPT for the one with the given `targetId`. That
  * Question should be the same EXCEPT that its name should now be `newName`.
  */
+//DONE
 export function renameQuestionById(
     questions: Question[],
     targetId: number,
     newName: string,
 ): Question[] {
-    return [];
+    /*const t = questions.find((q: Question): boolean => q.id === targetId);
+    t.name = newName;*/
+    let retArr: Question[] = questions.map(
+        (q: Question): Question =>
+            q.id === targetId ? { ...q, name: newName } : { ...q },
+    );
+
+    return retArr;
 }
 
 /***
