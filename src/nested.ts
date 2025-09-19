@@ -207,12 +207,21 @@ export function renameQuestionById(
  * AND if the `newQuestionType` is no longer "multiple_choice_question" than the `options`
  * must be set to an empty list.
  */
+//DONE
 export function changeQuestionTypeById(
     questions: Question[],
     targetId: number,
     newQuestionType: QuestionType,
 ): Question[] {
-    return [];
+    let retArr: Question[] = questions.map(
+        (q: Question): Question =>
+            q.id === targetId ?
+                newQuestionType != "multiple_choice_question" ?
+                    { ...q, type: newQuestionType, options: [] }
+                :   { ...q, type: newQuestionType }
+            :   { ...q },
+    );
+    return retArr;
 }
 
 /**
