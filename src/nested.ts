@@ -122,6 +122,7 @@ export function toCSV(questions: Question[]): string {
  * Answers. Each Question gets its own Answer, copying over the `id` as the `questionId`,
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
+//DONE
 export function makeAnswers(questions: Question[]): Answer[] {
     let retArr: Answer[] = questions.map(
         (q: Question): Answer => ({
@@ -138,8 +139,12 @@ export function makeAnswers(questions: Question[]): Answer[] {
  * Consumes an array of Questions and produces a new array of questions, where
  * each question is now published, regardless of its previous published status.
  */
+//DONE
 export function publishAll(questions: Question[]): Question[] {
-    return [];
+    let retArr: Question[] = questions.map(
+        (q: Question): Question => ({ ...q, published: true }),
+    );
+    return retArr;
 }
 
 /***
