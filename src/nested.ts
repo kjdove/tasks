@@ -1,6 +1,6 @@
 import { Answer } from "./interfaces/answer";
 import { Question, QuestionType } from "./interfaces/question";
-import { makeBlankQuestion } from "./objects";
+import { duplicateQuestion, makeBlankQuestion } from "./objects";
 
 /**
  * Consumes an array of questions and returns a new array with only the questions
@@ -234,13 +234,36 @@ export function changeQuestionTypeById(
  * Remember, if a function starts getting too complicated, think about how a helper function
  * can make it simpler! Break down complicated tasks into little pieces.
  */
+//DONE
+export function helperFunc(
+    opt: string[],
+    targetOptionIndex: number,
+    newOption: string,
+): string[] {
+    return targetOptionIndex === -1 ?
+            [...opt, newOption]
+        :   opt.map((o, i) => (i === targetOptionIndex ? newOption : o));
+}
 export function editOption(
     questions: Question[],
     targetId: number,
     targetOptionIndex: number,
     newOption: string,
 ): Question[] {
-    return [];
+    let retArr: Question[] = questions.map(
+        (q: Question): Question =>
+            q.id != targetId ?
+                { ...q }
+            :   {
+                    ...q,
+                    options: helperFunc(
+                        q.options,
+                        targetOptionIndex,
+                        newOption,
+                    ),
+                },
+    );
+    return retArr;
 }
 
 /***
@@ -249,10 +272,17 @@ export function editOption(
  * the duplicate inserted directly after the original question. Use the `duplicateQuestion`
  * function you defined previously; the `newId` is the parameter to use for the duplicate's ID.
  */
+//DONE
 export function duplicateQuestionInArray(
     questions: Question[],
     targetId: number,
     newId: number,
 ): Question[] {
-    return [];
+    return questions.reduce((acc: Question[], q: Question) => {
+        acc.push(q);
+        if (q.id === targetId) {
+            acc.push(duplicateQuestion(newId, q));
+        }
+        return acc;
+    }, []);
 }
