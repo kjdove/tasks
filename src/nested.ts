@@ -57,8 +57,10 @@ export function removeQuestion(questions: Question[], id: number): Question[] {
  * Consumes an array of questions and returns a new array containing just the names of the
  * questions, as an array.
  */
+//DONE
 export function getNames(questions: Question[]): string[] {
-    return [];
+    let retArr: string[] = questions.map((q: Question): string => q.name);
+    return retArr;
 }
 
 /***
