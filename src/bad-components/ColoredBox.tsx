@@ -3,8 +3,6 @@ import { Button } from "react-bootstrap";
 
 export const COLORS = ["red", "blue", "green"];
 
-/
-
 export function ColoredBox(): React.JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(0);
 
