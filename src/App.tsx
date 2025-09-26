@@ -11,15 +11,14 @@ import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
 
-// eslint-disable-next-line no-undef
-function App(): JSX.Element {
+function App(): React.JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript Hello World
             </header>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
